@@ -1,0 +1,191 @@
+/***************
+GLOBAL STYLES
+**************/
+
+body {
+    position: absolute;
+    overflow-x: hidden;
+    height: 100%;
+    margin: 0;
+    inset: 0;
+}
+#wrap {
+    position: relative;
+    height: 100%;
+}
+.section {
+    position: relative;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/***************
+SECTIONS
+**************/
+#hero {
+    height: 1500px;
+    color: white;
+}
+#section-1 {
+    height: 2000px;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    transition: background-color 750ms ease, color 250ms ease, font-size 2000ms ease;
+}
+#lens {
+    height: 3000px;
+    color: blue;
+    z-index: 3;
+    transition: background-color 1500ms ease;
+}
+#section-2 {
+    height: 800px;
+    color: red;
+}
+.content-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    bottom: 1200px;
+    height: 750px;
+}
+/***************
+INTERFACE
+**************/
+.section.grow {
+    font-size: 250%;
+}
+
+#section-1 aside {
+    position: absolute;
+    top: 5%;
+    height: 100%;
+    width: 100%;
+}
+#section-1 aside section {
+    top: 0px;
+    position: sticky;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 25%;
+}
+#section-1 aside span {
+    position: relative;
+    width: 100%;
+}
+#section-1 aside span h2 {
+    position: absolute;
+    width: 100vw;
+    height: 150px;
+    border-bottom: 2px solid black;
+    margin: 0;
+    padding-left: 155px;
+    display: flex;
+    align-items: center;
+}
+
+/*********** ***********/
+
+#lens h1 {
+    position: absolute;
+    top: 75%;
+}
+#project-wrap {
+    position: absolute;
+    height: 2500px;
+    width: 100%;
+    background-color: black;
+    outline: 7px solid white;
+    outline-offset: -20px;
+    border-radius: 750px;
+    left: 0;
+    bottom: 40%;
+}
+.project {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+    border: 2px solid blue;
+    z-index: 10;
+    transition: transform 1500ms ease;
+    background-color: white;
+}
+.project:nth-of-type(even) {
+    transform: translateX(99%);
+}
+.project:nth-of-type(odd) {
+    transform: translateX(-98%);
+}
+.project.slidein {
+    transform: translateX(0);
+}
+#project-1 {
+    top: 800px;
+}
+#project-2 {
+    top: 1000px;
+}
+#project-3 {
+    top: 1200px;
+}
+#project-4 {
+    top: 1400px;
+}
+
+/*********** **********/
+
+.content-wrap aside {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 250%;
+    height: 1900px;
+    transform: translateY(575px);
+    overflow: hidden;
+}
+#art-image {
+    right: 0;
+    margin-right: 14px;
+    background-color: black;
+    border-right: 7px solid white;
+    border-bottom: 7px solid white;
+    border-left: 7px solid white;
+    border-bottom-left-radius: 1000px;
+    border-bottom-right-radius: 1000px;
+}
+#description {
+    /*background-color: rgb(55, 55, 55);*/
+    background-color: black;
+    left: 0;
+    margin-left: 14px;
+    border-top: 7px solid white;
+}
+#description #title {
+    font-weight: bold;
+}
+#description .inner-section {
+    height: 650px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}

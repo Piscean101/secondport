@@ -20,6 +20,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 /***************
@@ -28,6 +29,13 @@ SECTIONS
 #hero {
     height: 1500px;
     color: white;
+}
+#hero p {
+    position: absolute;
+    font-size: 2000%;
+    top: 0px;
+    max-width: 90%;
+    line-height: 1.75;
 }
 #section-1 {
     height: 2000px;
@@ -42,9 +50,33 @@ SECTIONS
     z-index: 3;
     transition: background-color 1500ms ease;
 }
-#section-2 {
-    height: 800px;
-    color: red;
+footer {
+    position: absolute;
+    bottom: 2px;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    z-index: 15;
+    transition: transform 2500ms ease;
+    transform: translateX(-98%);
+}
+footer.slidein {
+    transform: translateX(0%);
+}
+footer button {
+    border-radius: 25px; 
+    color: white;
+    height: 75%;
+    background-image: linear-gradient(45deg, purple, violet, blue);
+    outline: 2px solid white;
+    transition: outline-offset 400ms ease;
+}
+footer button:hover {
+    cursor: pointer; 
+    outline-offset: 3px;
 }
 .content-wrap {
     display: flex;
@@ -61,6 +93,9 @@ SECTIONS
 /***************
 INTERFACE
 **************/
+#hero p, #section-1 aside div {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 .section.grow {
     font-size: 250%;
 }
@@ -79,21 +114,37 @@ INTERFACE
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    height: 25%;
+    height: 22%;
 }
-#section-1 aside span {
+#section-1 aside div {
+    transition: background-image 500ms ease;
     position: relative;
     width: 100%;
 }
-#section-1 aside span h2 {
+#section-1 aside h2#first:hover {
+    background-image: linear-gradient(20deg, white, white, blue, violet, blue, blue);
+    color: white;
+    cursor: pointer;
+}
+#section-1 aside h2#second:hover {
+    background-image: linear-gradient(20deg, white, white, darkorange, red, orange, white);
+    color: white;
+    cursor: pointer;
+}
+#section-1 aside h2#third:hover {
+    background-image: linear-gradient(20deg, white, white, green, yellow, brown, white);
+    color: white;
+    cursor: pointer;
+}
+#section-1 aside div h2 {
     position: absolute;
     width: 100vw;
     height: 150px;
-    border-bottom: 2px solid black;
     margin: 0;
-    padding-left: 155px;
+    padding-left: 85vw;
     display: flex;
     align-items: center;
+    transition: color 400ms ease;
 }
 
 /*********** ***********/

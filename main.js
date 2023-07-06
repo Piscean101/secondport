@@ -24,7 +24,6 @@ function pageObserver() {
     const section = document.getElementById('section-1');
     observer.observe(section);
     const lens = document.getElementById('lens');
-   
 };
 function projectObserver() {
     let observer;
@@ -37,7 +36,9 @@ function projectObserver() {
     const project = document.querySelectorAll('.project');
     project.forEach((e) => {
         observer.observe(e);
-    })
+    });
+    const footer = document.querySelector('footer');
+    observer.observe(footer);
 }
 function handleIntersect(entries) {
     entries.forEach(entry => {

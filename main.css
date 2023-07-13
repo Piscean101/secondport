@@ -2,6 +2,12 @@
 GLOBAL STYLES
 **************/
 
+html {
+    scroll-behavior: smooth;
+}
+a:link, a:visited, a:active {
+    color: black;
+}
 body {
     position: absolute;
     overflow-x: hidden;
@@ -64,44 +70,7 @@ footer {
     transition: transform 2500ms ease;
     transform: translateX(-98%);
 }
-footer.slidein {
-    transform: translateX(0%);
-}
-footer div::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: conic-gradient(red 20deg, transparent 120deg);
-    animation: spin infinite linear 1800ms;
-}
-footer div::after {
-    content: "Bob";
-    position: absolute;
-    width: 67px;
-    height: 37px;
-    background-color: #181818;
-    border-radius: 5px;
-}
-footer div {
-    overflow: hidden;
-    border-radius: 25px; 
-    color: white;
-    height: 40px;
-    width: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    /* background-image: linear-gradient(45deg, purple, violet, blue);
-    outline: 2px solid white;
-    transition: outline-offset 400ms ease; */
-    position: relative;
-}
-footer button:hover {
-    cursor: pointer; 
-    /*outline-offset: 3px;*/
-}
+
 .content-wrap {
     display: flex;
     justify-content: center;
@@ -145,6 +114,9 @@ INTERFACE
     position: relative;
     width: 100%;
 }
+#section-1 aside div h2:hover {
+    transform: translateX(-100px);
+}
 #section-1 aside h2#first:hover {
     background-image: linear-gradient(20deg, white, white, blue, violet, blue, blue);
     color: white;
@@ -165,13 +137,13 @@ INTERFACE
     width: 100vw;
     height: 150px;
     margin: 0;
-    padding-left: 85vw;
+    padding-left: 80vw;
     display: flex;
     align-items: center;
-    transition: color 400ms ease;
+    transition: color 400ms ease, transform 400ms ease;
 }
 
-/*********** ***********/
+/*********** INTERFACE: LENS ***********/
 
 #lens h1 {
     position: absolute;
@@ -221,7 +193,7 @@ INTERFACE
     top: 1400px;
 }
 
-/*********** **********/
+/*********** INTERFACE: BOTTOM **********/
 
 .content-wrap aside {
     position: absolute;
@@ -263,6 +235,63 @@ INTERFACE
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+}
+
+
+.inner-section {
+    transition: background-color 1500ms ease;
+}
+
+
+footer.slidein {
+    transform: translateX(0%);
+}
+footer div::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: conic-gradient(white 60deg, transparent 200deg);
+    animation: spin infinite linear 2800ms;
+}
+footer div#b-2::before {
+    background-image: conic-gradient(white 60deg, transparent 100deg);
+}
+footer div::after {
+    content: "";
+    position: absolute;
+    height: 95%;
+    width: 95%;
+    background-image: linear-gradient(20deg, black, #181818);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer div#b-1::after{
+    content: "Bobs"
+}
+footer div#b-2::after{
+    content: "Burgers"
+}
+footer div {
+    overflow: hidden;
+    color: white;
+    height: 60px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 75px;
+    box-sizing: border-box;
+    border: 2px solid white;
+    /* background-image: linear-gradient(45deg, purple, violet, blue);
+    outline: 2px solid white;
+    transition: outline-offset 400ms ease; */
+    position: relative;
+}
+footer button:hover {
+    cursor: pointer; 
+    /*outline-offset: 3px;*/
 }
 
 @keyframes spin {

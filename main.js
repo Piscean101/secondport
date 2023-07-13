@@ -11,19 +11,25 @@ function pageObserver() {
     let optionsb = {
         root: null,
         rootMargin: "0px",
-        threshold: 0.25
+        threshold: 0.8
     }
     let optionsc = {
         root: null,
         rootMargin: "0px",
-        threshold: 0.2
+        threshold: 0.8
     }
     observer = new IntersectionObserver(handleIntersect, options);
     observerb = new IntersectionObserver(handleIntersect, optionsb);
-    observerc = new IntersectionObserver(handleIntersect, optionsc);
+    observerc = new IntersectionObserver(handleIntersect2, optionsc);
+    /* */
     const section = document.getElementById('section-1');
-    observer.observe(section);
     const lens = document.getElementById('lens');
+    const innersection = document.querySelectorAll('.inner-section');
+    /* */
+    observer.observe(section);
+    innersection.forEach((e) => {
+        observerb.observe(e);
+    })
 };
 function projectObserver() {
     let observer;
@@ -53,6 +59,11 @@ function handleIntersect(entries) {
         }
     })
 };
+function handleIntersect2(entries) {
+    entries.forEach(entry => {
+        entry.target.style.backgroundColor = blue;
+    }) 
+}
 function handler(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {

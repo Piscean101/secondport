@@ -49,6 +49,9 @@ SECTIONS
     top: 0px;
     z-index: 2;
     transition: background-color 750ms ease, color 250ms ease, font-size 2000ms ease;
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
 }
 #lens {
     height: 3000px;
@@ -92,30 +95,19 @@ INTERFACE
 .section.grow {
     font-size: 250%;
 }
-
-#section-1 aside {
-    position: absolute;
-    top: 5%;
-    height: 100%;
-    width: 100%;
+#section-1 .block {
+    height: 55%;
+    width: 50%;
 }
-#section-1 aside section {
-    top: 0px;
-    position: sticky;
-    width: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 22%;
+#section-1 .block:nth-of-type(1), #section-1 .block:nth-of-type(4) {
+    background-color: white;
 }
-#section-1 aside div {
-    transition: background-image 500ms ease;
+#section-1 .block:nth-of-type(2), #section-1 .block:nth-of-type(3) {
+    background-color: orange; 
+}
+#section-1 .block:nth-of-type(3), #section-1 .block:nth-of-type(4) {
     position: relative;
-    width: 100%;
-}
-#section-1 aside div h2:hover {
-    transform: translateX(-100px);
+    transform: translateY(-200px);
 }
 #section-1 aside h2#first:hover {
     background-image: linear-gradient(20deg, white, white, blue, violet, blue, blue);
@@ -123,24 +115,16 @@ INTERFACE
     cursor: pointer;
 }
 #section-1 aside h2#second:hover {
-    background-image: linear-gradient(20deg, white, white, darkorange, red, orange, white);
+    background-image: linear-gradient(20deg, white, white, blue, violet, blue, blue);
+    /*background-image: linear-gradient(20deg, white, white, darkorange, red, orange, white);*/
     color: white;
     cursor: pointer;
 }
 #section-1 aside h2#third:hover {
+    /*background-image: linear-gradient(20deg, white, white, blue, violet, blue, blue);*/
     background-image: linear-gradient(20deg, white, white, green, yellow, brown, white);
     color: white;
     cursor: pointer;
-}
-#section-1 aside div h2 {
-    position: absolute;
-    width: 100vw;
-    height: 150px;
-    margin: 0;
-    padding-left: 80vw;
-    display: flex;
-    align-items: center;
-    transition: color 400ms ease, transform 400ms ease;
 }
 
 /*********** INTERFACE: LENS ***********/
@@ -218,6 +202,7 @@ INTERFACE
     border-left: 7px solid white;
     border-bottom-left-radius: 1000px;
     border-bottom-right-radius: 1000px;
+    padding: 0;
 }
 #description {
     /*background-color: rgb(55, 55, 55);*/
@@ -236,10 +221,20 @@ INTERFACE
     align-items: center;
     flex-wrap: wrap;
 }
-
-
+#selfie {
+    background-image: url('images/facepic.jpg');
+    background-position: center;
+    background-size: cover;
+}
 .inner-section {
     transition: background-color 1500ms ease;
+}
+.inner-display {
+    position: relative;
+    width: 100%;
+    height: 34%;
+    margin: none;
+    text-align: center;
 }
 
 
@@ -251,7 +246,7 @@ footer div::before {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: conic-gradient(white 60deg, transparent 200deg);
+    background-image: conic-gradient(white 60deg, transparent 100deg);
     animation: spin infinite linear 2800ms;
 }
 footer div#b-2::before {
@@ -276,17 +271,13 @@ footer div#b-2::after{
 footer div {
     overflow: hidden;
     color: white;
-    height: 60px;
-    width: 100px;
+    border-radius: 25px;
+    height: 65px;
+    width: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 75px;
     box-sizing: border-box;
-    border: 2px solid white;
-    /* background-image: linear-gradient(45deg, purple, violet, blue);
-    outline: 2px solid white;
-    transition: outline-offset 400ms ease; */
     position: relative;
 }
 footer button:hover {

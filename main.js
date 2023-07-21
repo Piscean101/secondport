@@ -11,7 +11,7 @@ function pageObserver() {
     let optionsb = {
         root: null,
         rootMargin: "0px",
-        threshold: 0.8
+        threshold: 0.7
     }
     let optionsc = {
         root: null,
@@ -24,7 +24,7 @@ function pageObserver() {
     /* */
     const section = document.getElementById('section-1');
     const lens = document.getElementById('lens');
-    const innersection = document.querySelectorAll('.inner-section');
+    const innersection = document.querySelectorAll('.content-section');
     /* */
     observer.observe(section);
     innersection.forEach((e) => {
@@ -39,12 +39,13 @@ function projectObserver() {
         threshold: 0
     }
     observer = new IntersectionObserver(handler, options);
+    observeonce = new IntersectionObserver(handleonce, options);
     const project = document.querySelectorAll('.project');
     project.forEach((e) => {
         observer.observe(e);
     });
     const footer = document.querySelector('footer');
-    observer.observe(footer);
+    observeonce.observe(footer);
 }
 function handleIntersect(entries) {
     entries.forEach(entry => {
@@ -71,6 +72,13 @@ function handler(entries) {
             entry.target.classList.add('slidein');
         } else {
             entry.target.classList.remove('slidein');
+        }
+    })
+}
+function handleonce(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('slidein');
         }
     })
 }

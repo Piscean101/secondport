@@ -6,7 +6,7 @@ function pageObserver() {
     let options = {
         root: null,
         rootMargin: "0px",
-        threshold: 0.3
+        threshold: 0.2
     }
     let optionsb = {
         root: null,
@@ -31,6 +31,20 @@ function pageObserver() {
         observerb.observe(e);
     })
 };
+function blockObserver() {
+    let observer;
+    let options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.3
+    }
+    observer = new IntersectionObserver(handletext, options);
+    const block = document.querySelectorAll('.block');
+    block.forEach((e) => {
+        let c = e.children;
+        observer.observe(c);
+    })
+}
 function projectObserver() {
     let observer;
     let options = {
@@ -46,17 +60,20 @@ function projectObserver() {
     });
     const footer = document.querySelector('footer');
     observeonce.observe(footer);
-}
+};
 function handleIntersect(entries) {
     entries.forEach(entry => {
-        let style = entry.target.style
+        let style = entry.target.style;
+        let rise = document.querySelectorAll('.rise');
         if (entry.isIntersecting) {
             style.backgroundColor = 'white';
             entry.target.classList.add('grow');
+            rise.forEach((e) => {
+                e.classList.add('float');
+            })
         } else {
             style.backgroundColor = 'black';
             style.color = 'black';
-            entry.target.classList.remove('grow');
         }
     })
 };

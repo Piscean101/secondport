@@ -34,7 +34,8 @@ SECTIONS
 **************/
 #hero {
     height: 1500px;
-    color: white;
+    color: #ddd;
+    background-color: #ddd;
 }
 #hero p {
     position: absolute;
@@ -42,7 +43,9 @@ SECTIONS
     top: 0px;
     max-width: 90%;
     line-height: 1.75;
+    -webkit-text-stroke: 5px white;
 }
+
 #section-1 {
     height: 2000px;
     position: sticky;
@@ -92,23 +95,38 @@ INTERFACE
 #hero p, #section-1 aside div {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.section.grow {
+#section-1.grow {
     font-size: 250%;
+}
+#section-1 p {
+    opacity: 0;
+    transition: opacity 5300ms ease, transform 4500ms ease;
+}
+#section-1 p.float {
+    position: relative;
+    transform: translateY(-150px);
+    color: blue;
+    opacity: 1;
 }
 #section-1 .block {
     height: 55%;
     width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #section-1 .block:nth-of-type(1), #section-1 .block:nth-of-type(4) {
-    background-color: white;
+    background-color: orange;
 }
 #section-1 .block:nth-of-type(2), #section-1 .block:nth-of-type(3) {
-    background-color: orange; 
+    background-color: white; 
+    overflow: hidden;
 }
 #section-1 .block:nth-of-type(3), #section-1 .block:nth-of-type(4) {
     position: relative;
     transform: translateY(-200px);
 }
+
 #section-1 aside h2#first:hover {
     background-image: linear-gradient(20deg, white, white, blue, violet, blue, blue);
     color: white;

@@ -28,6 +28,12 @@ body {
     align-items: center;
     flex-wrap: wrap;
 }
+.abso-text {
+    position: absolute;
+    top: 5px;
+    margin: 30px;
+    font-weight: bold;
+}
 
 /***************
 SECTIONS
@@ -97,10 +103,11 @@ INTERFACE
 }
 #section-1.grow {
     font-size: 250%;
+    text-align: center;
 }
 #section-1 p {
     opacity: 0;
-    transition: opacity 5300ms ease, transform 4500ms ease;
+    transition: opacity 4200ms ease, transform 5500ms ease;
 }
 #section-1 p.float {
     position: relative;
@@ -115,10 +122,37 @@ INTERFACE
     justify-content: center;
     align-items: center;
 }
+
+#section-1 a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 15%;
+    position: relative;
+    bottom: 30%;
+    border-radius: 25px;
+    padding: 15px;
+    border: 3px solid black;
+    outline: 3px solid white;
+    transition: all 500ms ease;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+#section-1 a:hover {
+    outline-offset: 15px;
+    cursor: pointer;
+    border: 3px solid green;
+    background-color: rgba(0, 128, 0, 0.5);
+}
+#section-1 a img {
+    position: absolute;
+    width: 90%;
+} 
 #section-1 .block:nth-of-type(1), #section-1 .block:nth-of-type(4) {
     background-color: orange;
 }
 #section-1 .block:nth-of-type(2), #section-1 .block:nth-of-type(3) {
+    color: #ddd;
     background-color: white; 
     overflow: hidden;
 }
@@ -126,23 +160,12 @@ INTERFACE
     position: relative;
     transform: translateY(-200px);
 }
-
-#section-1 aside h2#first:hover {
-    background-image: linear-gradient(20deg, white, white, blue, violet, blue, blue);
-    color: white;
-    cursor: pointer;
-}
-#section-1 aside h2#second:hover {
-    background-image: linear-gradient(20deg, white, white, blue, violet, blue, blue);
-    /*background-image: linear-gradient(20deg, white, white, darkorange, red, orange, white);*/
-    color: white;
-    cursor: pointer;
-}
-#section-1 aside h2#third:hover {
-    /*background-image: linear-gradient(20deg, white, white, blue, violet, blue, blue);*/
-    background-image: linear-gradient(20deg, white, white, green, yellow, brown, white);
-    color: white;
-    cursor: pointer;
+#section-1 #downarrow {
+    position: absolute;
+    top: 17%;
+    height: 20%;
+    width: 30%;
+    opacity: 0.2;
 }
 
 /*********** INTERFACE: LENS ***********/

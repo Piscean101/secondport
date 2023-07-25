@@ -107,7 +107,7 @@ INTERFACE
 }
 #section-1 p {
     opacity: 0;
-    transition: opacity 4200ms ease, transform 5500ms ease;
+    transition: opacity 2800ms ease, transform 3500ms ease;
 }
 #section-1 p.float {
     position: relative;
@@ -121,8 +121,9 @@ INTERFACE
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    box-sizing: border-box;
 }
-
 #section-1 a {
     display: flex;
     align-items: center;
@@ -139,17 +140,19 @@ INTERFACE
     background-color: rgba(0, 0, 0, 0.25);
 }
 #section-1 a:hover {
-    outline-offset: 15px;
+    outline-offset: 4px;
+    outline: 3px green solid;
     cursor: pointer;
     border: 3px solid green;
-    background-color: rgba(0, 128, 0, 0.5);
+    /*background-color: rgba(0, 128, 0, 0.5);*/
+    background-image: linear-gradient(140deg, rgba(0, 128, 0, 0.5), green);
 }
 #section-1 a img {
     position: absolute;
     width: 90%;
 } 
 #section-1 .block:nth-of-type(1), #section-1 .block:nth-of-type(4) {
-    background-color: orange;
+    background-color: #ddd;
 }
 #section-1 .block:nth-of-type(2), #section-1 .block:nth-of-type(3) {
     color: #ddd;
@@ -166,6 +169,14 @@ INTERFACE
     height: 20%;
     width: 30%;
     opacity: 0.2;
+}
+#block-2 img:nth-of-type(1){ 
+    position: relative;
+    bottom: -150px;
+}
+#block-2 #text-block {
+    position: absolute;
+    top: 10%;
 }
 
 /*********** INTERFACE: LENS ***********/
@@ -244,6 +255,20 @@ INTERFACE
     border-bottom-left-radius: 1000px;
     border-bottom-right-radius: 1000px;
     padding: 0;
+    z-index: 3;
+}
+.logo {
+    padding: 0;
+    z-index: 1;
+    transition: transform 2500ms ease; 
+    transform: translateX(500px);
+    width: 75%;
+    height: 30%;
+    display: block;
+
+}
+.logo.slidein {
+    transform: translateX(0);
 }
 #description {
     /*background-color: rgb(55, 55, 55);*/
@@ -255,20 +280,10 @@ INTERFACE
 #description #title {
     font-weight: bold;
 }
-#description .inner-section {
-    height: 650px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
 #selfie {
     background-image: url('images/facepic.jpg');
     background-position: center;
     background-size: cover;
-}
-.inner-section {
-    transition: background-color 1500ms ease;
 }
 .inner-display {
     position: relative;
@@ -320,6 +335,7 @@ footer div {
     align-items: center;
     box-sizing: border-box;
     position: relative;
+    bottom: 10%;
 }
 footer button:hover {
     cursor: pointer; 

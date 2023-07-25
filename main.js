@@ -47,6 +47,9 @@ function blockObserver() {
 }
 function projectObserver() {
     let observer;
+    const project = document.querySelectorAll('.project');
+    const footer = document.querySelector('footer');
+    const logo = document.querySelectorAll('.logo');
     let options = {
         root: null,
         rootMargin: "0px",
@@ -54,11 +57,12 @@ function projectObserver() {
     }
     observer = new IntersectionObserver(handler, options);
     observeonce = new IntersectionObserver(handleonce, options);
-    const project = document.querySelectorAll('.project');
     project.forEach((e) => {
         observer.observe(e);
     });
-    const footer = document.querySelector('footer');
+    logo.forEach((e) => {
+        observeonce.observe(e);
+    })
     observeonce.observe(footer);
 };
 function handleIntersect(entries) {
@@ -102,4 +106,18 @@ function handleonce(entries) {
 window.addEventListener("load", (e) => {
     pageObserver();
     projectObserver();
+    const logos = document.querySelectorAll('.logo');
+    window.addEventListener("scroll", (e) => {
+        function checkHeight() {
+            logos.forEach((logo) => {
+                const edge = logo.getBoundingClientRect().top;
+                console.log(edge);
+                if (edge < 300) {
+                    logo.classList.add('slidein');
+                }
+            })
+        }
+        checkHeight();
+    });
 });
+

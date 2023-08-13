@@ -6,7 +6,7 @@ function pageObserver() {
     let options = {
         root: null,
         rootMargin: "0px",
-        threshold: 0.2
+        threshold: 0
     }
     let optionsb = {
         root: null,

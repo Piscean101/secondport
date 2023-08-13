@@ -28,12 +28,7 @@ body {
     align-items: center;
     flex-wrap: wrap;
 }
-.abso-text {
-    position: absolute;
-    top: 5px;
-    margin: 30px;
-    font-weight: bold;
-}
+
 
 /***************
 SECTIONS
@@ -45,19 +40,66 @@ SECTIONS
 }
 #hero p {
     position: absolute;
+    left: 5%;
     font-size: 2000%;
     top: 0px;
     max-width: 90%;
     line-height: 1.75;
     -webkit-text-stroke: 5px white;
 }
+#hero p, #section-1 aside div {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#hero #deondre {
+    position: absolute;
+    animation: titledance 3s ease;
+    transform: translateY(-250px);
+}
+#hero #palmer {
+    animation: colordance 4s;
+    transition: opacity 3500ms ease;
+}
+
+/** **/
+@keyframes titledance {
+    0% {
+        transform: translateY(-3000px);
+    }
+    20% {
+        transform: translateY(-200px);
+    }
+}
+@keyframes colordance {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.25;
+    }
+    40% {
+        opacity: 0;
+    }
+    44% {
+        opacity: 0.4;
+    }
+    47% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 1;
+    }
+}
+/** **/
 
 #section-1 {
     height: 2000px;
     position: sticky;
     top: 0px;
     z-index: 2;
-    transition: background-color 750ms ease, color 250ms ease, font-size 2000ms ease;
+    transition: background-color 750ms ease, color 250ms ease, font-size 700ms ease;
     display: flex;
     align-items: start;
     flex-wrap: wrap;
@@ -98,22 +140,25 @@ footer {
 /***************
 INTERFACE
 **************/
-#hero p, #section-1 aside div {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
 #section-1.grow {
     font-size: 250%;
     text-align: center;
 }
 #section-1 p {
     opacity: 0;
-    transition: opacity 2800ms ease, transform 3500ms ease;
+    transition: all 750ms ease;
+    box-sizing: border-box;
+    padding: 50px;
 }
 #section-1 p.float {
     position: relative;
     transform: translateY(-150px);
-    color: blue;
+    color: white;
+    font-size: 15px;
     opacity: 1;
+    border: 5px black inset;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: arial;
 }
 #section-1 .block {
     height: 55%;
@@ -128,62 +173,115 @@ INTERFACE
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 25%;
-    height: 15%;
+    width: 30%;
+    height: 12%;
     position: relative;
-    bottom: 30%;
+    bottom: 25%;
     border-radius: 25px;
     padding: 15px;
     border: 3px solid black;
     outline: 3px solid white;
-    transition: all 500ms ease;
+    transition: all 250ms ease;
     background-color: rgba(0, 0, 0, 0.25);
 }
 #section-1 a:hover {
-    outline-offset: 4px;
+    outline-offset: 1px;
     outline: 3px green solid;
-    cursor: pointer;
-    border: 3px solid green;
+    border: none;
     /*background-color: rgba(0, 128, 0, 0.5);*/
     background-image: linear-gradient(140deg, rgba(0, 128, 0, 0.5), green);
 }
 #section-1 a img {
-    position: absolute;
+    max-height: 100%;
     width: 90%;
 } 
-#section-1 .block:nth-of-type(1), #section-1 .block:nth-of-type(4) {
+#section-1 .block:nth-of-type(4) {
     background-color: #ddd;
+    border: 7px solid black;
+    transition: background-color ease 500ms;
+    border-top-left-radius: 500px;
+    border-top-right-radius: 500px;
+} #section-1 .block:nth-of-type(4):hover {
+    background-color: rgba(0, 0, 0, 0.47);
+    cursor: pointer;
 }
-#section-1 .block:nth-of-type(2), #section-1 .block:nth-of-type(3) {
+#section-1 .block:nth-of-type(3) {
     color: #ddd;
     background-color: white; 
     overflow: hidden;
 }
+#section-1 .block:nth-of-type(2), #section-1 .block:nth-of-type(1) {
+    background-image: linear-gradient(to bottom, #ddd, white, white);
+}
 #section-1 .block:nth-of-type(3), #section-1 .block:nth-of-type(4) {
     position: relative;
     transform: translateY(-200px);
+    font-size: 85%;
 }
 #section-1 #downarrow {
     position: absolute;
-    top: 17%;
+    top: 0;
     height: 20%;
     width: 30%;
     opacity: 0.2;
+    animation: drop 5500ms linear infinite;
 }
-#block-2 img:nth-of-type(1){ 
-    position: relative;
-    bottom: -150px;
+#section-1 #downarrow:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+#section-1 #downarrow:active {
+    display: none;
+}
+#wrap #section-1 #block-1 {
+    display: unset;
+}
+#block-1 .rise {
+    position: absolute;
+    bottom: 35%;
+    max-height: 450px;
+    width: 99vw;
+}
+#block-2 img#cntower{ 
+    position: absolute;
+    height: auto;
+    max-height: 400px;
+    aspect-ratio: 16 / 9;
+    width: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 4px solid white;
+    border-bottom: 4px solid white;
+    padding: 75px;
+    top: 0;
 }
 #block-2 #text-block {
     position: absolute;
-    top: 10%;
+    top: 20px;
+    z-index: 100;
 }
+.abso-text {
+    position: absolute;
+    top: 0;
+    font-weight: bold;
+    padding: 100px 30px 0px 30px;
+    background-color: white;
+    height: 150px;
+    z-index: 3;
+    font-family: consolas;
+}
+.abso-text.side {
+    background-color: transparent;
+}
+
 
 /*********** INTERFACE: LENS ***********/
 
 #lens h1 {
     position: absolute;
     top: 75%;
+    left: 5%;
+    font-family: consolas;
 }
 #project-wrap {
     position: absolute;
@@ -191,7 +289,7 @@ INTERFACE
     width: 100%;
     background-color: black;
     outline: 7px solid white;
-    outline-offset: -20px;
+    outline-offset: -14px;
     border-radius: 750px;
     left: 0;
     bottom: 40%;
@@ -202,13 +300,12 @@ INTERFACE
     align-items: center;
     height: 200px;
     width: 100%;
-    border: 2px solid blue;
-    z-index: 10;
+    z-index: 50;
     transition: transform 1500ms ease;
     background-color: white;
 }
 .project:nth-of-type(even) {
-    transform: translateX(99%);
+    transform: translateX(98%);
 }
 .project:nth-of-type(odd) {
     transform: translateX(-98%);
@@ -227,6 +324,13 @@ INTERFACE
 }
 #project-4 {
     top: 1400px;
+}
+#project-5 {
+    top: 1600px;
+    background-image: url('./projects/palmerdex.png');
+    background-size: cover;
+    background-position: center;
+    color: red;
 }
 
 /*********** INTERFACE: BOTTOM **********/
@@ -247,7 +351,7 @@ INTERFACE
 }
 #art-image {
     right: 0;
-    margin-right: 14px;
+    margin-right: 7px;
     background-color: black;
     border-right: 7px solid white;
     border-bottom: 7px solid white;
@@ -260,7 +364,7 @@ INTERFACE
 .logo {
     padding: 0;
     z-index: 1;
-    transition: transform 2500ms ease; 
+    transition: transform 1600ms ease; 
     transform: translateX(500px);
     width: 75%;
     height: 30%;
@@ -301,9 +405,9 @@ footer div::before {
     content: "";
     position: absolute;
     width: 100%;
-    height: 100%;
-    background-image: conic-gradient(white 60deg, transparent 100deg);
-    animation: spin infinite linear 2800ms;
+    height: 70%;
+    background-image: linear-gradient(90deg, lightblue, lightgreen);
+    animation: spin infinite linear 3800ms;
 }
 footer div#b-2::before {
     background-image: conic-gradient(white 60deg, transparent 100deg);
@@ -311,15 +415,16 @@ footer div#b-2::before {
 footer div::after {
     content: "";
     position: absolute;
-    height: 95%;
-    width: 95%;
+    height: 97%;
+    width: 98%;
     background-image: linear-gradient(20deg, black, #181818);
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 45px;
 }
 footer div#b-1::after{
-    content: "Bobs"
+    content: "Hire Me"
 }
 footer div#b-2::after{
     content: "Burgers"
@@ -327,7 +432,7 @@ footer div#b-2::after{
 footer div {
     overflow: hidden;
     color: white;
-    border-radius: 25px;
+    border-radius: 50px;
     height: 65px;
     width: 120px;
     display: flex;
@@ -337,7 +442,7 @@ footer div {
     position: relative;
     bottom: 10%;
 }
-footer button:hover {
+footer:hover {
     cursor: pointer; 
     /*outline-offset: 3px;*/
 }
@@ -348,5 +453,13 @@ footer button:hover {
     }
     100% {
         transform: rotate(-360deg);
+    }
+}
+@keyframes drop {
+    0% {
+        transform: translateY(-500px);
+    }
+    100% {
+        transform: translateY(500px);
     }
 }

@@ -206,7 +206,7 @@ INTERFACE
     cursor: pointer;
 }
 #section-1 .block:nth-of-type(3) {
-    color: #ddd;
+    color: #818181;
     background-color: white; 
     overflow: hidden;
 }
@@ -253,8 +253,17 @@ INTERFACE
     padding: 75px;
     top: 0;
 }
-figcaption {
-    font-family: consolas;
+
+.cntower-desc {
+    
+    height: 150px;
+    z-index: 100;
+    background-color: orangered;
+    position: absolute;
+    top: 0;
+    padding: 35px;
+    font-family: tahoma;
+    font-weight: bold;
 }
 .abso-text {
     position: absolute;

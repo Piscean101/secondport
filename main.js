@@ -111,7 +111,6 @@ window.addEventListener("load", (e) => {
         function checkHeight() {
             logos.forEach((logo) => {
                 const edge = logo.getBoundingClientRect().top;
-                console.log(edge);
                 if (edge < 300) {
                     logo.classList.add('slidein');
                 }
